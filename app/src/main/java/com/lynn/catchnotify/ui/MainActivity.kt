@@ -1,6 +1,8 @@
 package com.lynn.catchnotify.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,5 +19,10 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        startNotificationService()
+    }
+
+    private fun startNotificationService(){
+        startActivity( Intent(ACTION_NOTIFICATION_LISTENER_SETTINGS));
     }
 }
